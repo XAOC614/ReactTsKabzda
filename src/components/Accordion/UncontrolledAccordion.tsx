@@ -6,7 +6,7 @@ type AccordionPropsType ={
 function UncontrolledAccordion(props: AccordionPropsType) {
  let [collapsed,setCollapsed] = useState(false)
     return <div>
-        <AccordionTitle title={props.titleValue}/> <button onClick={()=>setCollapsed(true)}>TOGGLE</button>
+        <AccordionTitle title={props.titleValue}/> <button onClick={()=>setCollapsed(!collapsed)}>TOGGLE</button>
         { collapsed && <AccordionBody/>}
     </div>
 }
