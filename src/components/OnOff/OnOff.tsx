@@ -33,7 +33,6 @@ export const OnOff = (props:OnOffType) => {
 
 
     }
-
     return(
         <div>
             <div style={onStyle} onClick={()=> {setOn(true)} }>On</div>
