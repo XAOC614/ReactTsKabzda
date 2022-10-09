@@ -8,7 +8,12 @@ import UncontrolledAccordion from "./components/Accordion/UncontrolledAccordion"
 import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
 import {RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
-import {ControlledInput, InputByButtonPress, UncontrolledInput} from "./components/Input/UncontrolledInput";
+import {
+    ControlledCheckbox,
+    ControlledInput, ControlledSelect,
+    InputByButtonPress,
+    UncontrolledInput
+} from "./components/Input/UncontrolledInput";
 
 
 
@@ -28,8 +33,15 @@ function App() {
         <Accordion titleValue = {'Menu'} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
         <Rating value={ratingValue} onClick={setRatingValue}/>
         <UncontrolledInput/>
+        <div>
+            <InputByButtonPress/>
+        </div>
+
         <ControlledInput/>
-        <InputByButtonPress/>
+        <ControlledCheckbox/>
+        <div>
+            <ControlledSelect/>
+        </div>
 
     </div>
 }

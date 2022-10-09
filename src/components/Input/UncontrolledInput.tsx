@@ -1,4 +1,5 @@
 import React, {ChangeEvent, useRef, useState} from "react";
+import {string} from "prop-types";
 
 export const UncontrolledInput = () =>{
     const [value,setValue]=useState('')
@@ -20,7 +21,28 @@ export const InputByButtonPress = () =>{
 
 }
 export const ControlledInput = () => {
-    return <div>
-        <input value={'it-incubator'}/>
-        </div>
+const [parentValue,setParentValue]=useState('')
+const onChange = (e:ChangeEvent<HTMLInputElement>) =>{
+    setParentValue(e.currentTarget.value)
+}
+    return <input onChange={onChange} value={parentValue}/>
+}
+export const ControlledCheckbox = () => {
+    const [parentValue,setParentValue]=useState(true)
+    const onChange = (e:ChangeEvent<HTMLInputElement>) =>{
+        setParentValue(e.currentTarget.checked)
+    }
+    return <input type={"checkbox"} checked={parentValue} onChange={onChange} />
+}
+export const ControlledSelect = () => {
+    const [parentValue,setParentValue]=useState<string|undefined>(undefined)
+    const onChange = (e:ChangeEvent<HTMLSelectElement>) =>{
+        setParentValue(e.currentTarget.value)
+    }
+    return <select value={parentValue} onChange={onChange}>
+        <option>none</option>
+        <option value={'1'}>Minsk</option>
+        <option value={'2'}>Moscow</option>
+        <option value={'3'}>Kiev</option>
+    </select>
 }
