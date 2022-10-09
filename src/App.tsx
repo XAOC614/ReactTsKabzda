@@ -14,6 +14,7 @@ import {
     InputByButtonPress,
     UncontrolledInput
 } from "./components/Input/UncontrolledInput";
+import {log} from "util";
 
 
 
@@ -30,7 +31,8 @@ function App() {
         {/*<UncontrolledRating />*/}
         {/*<AppTitle title = {'Hello'} />*/}
         {/*<AppTitle title = {'My Friends'}/>*/}
-        <Accordion titleValue = {'Menu'} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
+        <Accordion titleValue = {'Menu'} collapsed={accordionCollapsed} onChange={setAccordionCollapsed}
+                   items={[{title:'Dima', value:1},{title:'Sergey', value:2},{title:'Anna', value:3},{title:'Valera', value:4}]} onClick={console.log}/>
         <Rating value={ratingValue} onClick={setRatingValue}/>
         <UncontrolledInput/>
         <div>
