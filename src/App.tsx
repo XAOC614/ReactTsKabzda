@@ -8,6 +8,7 @@ import UncontrolledAccordion from "./components/Accordion/UncontrolledAccordion"
 import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
 import {RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
+import {ControlledInput, InputByButtonPress, UncontrolledInput} from "./components/Input/UncontrolledInput";
 
 
 
@@ -26,6 +27,9 @@ function App() {
         {/*<AppTitle title = {'My Friends'}/>*/}
         <Accordion titleValue = {'Menu'} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
         <Rating value={ratingValue} onClick={setRatingValue}/>
+        <UncontrolledInput/>
+        <ControlledInput/>
+        <InputByButtonPress/>
 
     </div>
 }
