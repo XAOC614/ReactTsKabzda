@@ -15,6 +15,7 @@ import {
     UncontrolledInput
 } from "./components/Input/UncontrolledInput";
 import {log} from "util";
+import {Select} from "./components/Select/Select";
 
 
 
@@ -23,6 +24,7 @@ function App() {
     let [ratingValue, setRatingValue]= useState<RatingValueType>(0)
     let [accordionCollapsed, setAccordionCollapsed]= useState<boolean>(false)
     let [on,setOn] = useState(false)
+    const [value,setValue] = useState('2')
     return <div className='App'>
         <OnOff on={on} onChange={ setOn }/>
         {/*<UncontrolledOnOff />*/}
@@ -44,6 +46,7 @@ function App() {
         <div>
             <ControlledSelect/>
         </div>
+        <Select value={value} onChange={setValue} items={[{value:'1',title:'Minsk'},{value:'2',title:'Moskow'},{value:'3',title:'Kiev'}]}/>
 
     </div>
 }
