@@ -29,7 +29,7 @@ function App() {
         <OnOff on={on} onChange={ setOn }/>
         {/*<UncontrolledOnOff />*/}
         {/*<UncontrolledAccordion titleValue={'Menu'}/>*/}
-        {/*<UncontrolledAccordion titleValue={'Users'}/>*/}
+        <UncontrolledAccordion titleValue={'Users'}/>
         {/*<UncontrolledRating />*/}
         {/*<AppTitle title = {'Hello'} />*/}
         {/*<AppTitle title = {'My Friends'}/>*/}
