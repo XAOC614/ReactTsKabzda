@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
-
-
 import UncontrolledAccordion from "./components/Accordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
 import {RatingValueType} from "./components/Rating/Rating";
@@ -14,8 +12,8 @@ import {
     InputByButtonPress,
     UncontrolledInput
 } from "./components/Input/UncontrolledInput";
-import {log} from "util";
 import {Select} from "./components/Select/Select";
+import {DifficultCountingExample} from "./components/UseMemo/UseMemo";
 
 
 
@@ -47,6 +45,7 @@ function App() {
             <ControlledSelect/>
         </div>
         <Select value={value} onChange={setValue} items={[{value:'1',title:'Minsk'},{value:'2',title:'Moskow'},{value:'3',title:'Kiev'}]}/>
+        <DifficultCountingExample/>
 
     </div>
 }

@@ -19,7 +19,7 @@ type AccordionBodyPropsType = {
     items:ItemType[]
     onClick:(value:any)=>void
 }
-function Accordion(props: AccordionPropsType) {
+function Accordion1(props: AccordionPropsType) {
 
     return <div>
         <AccordionTitle title={props.titleValue} onClick={()=>props.onChange(!props.collapsed)}/>
@@ -36,4 +36,5 @@ function AccordionBody (props: AccordionBodyPropsType) {
         </ul>
 
 }
+const Accordion = React.memo(Accordion1)
 export default Accordion;
