@@ -1,7 +1,7 @@
 import React, {ChangeEvent, useRef, useState} from "react";
 import {string} from "prop-types";
 
-export const UncontrolledInput = () =>{
+ const UncontrolledInput1 = () =>{
     const [value,setValue]=useState('')
     const onChange = (event:ChangeEvent<HTMLInputElement>)=>{
         const actualValue = event.currentTarget.value
@@ -10,7 +10,9 @@ export const UncontrolledInput = () =>{
     return  <><input  onChange={onChange}/> -{value}</>
 
 }
-export const InputByButtonPress = () =>{
+export const UncontrolledInput = React.memo(UncontrolledInput1)
+
+ const InputByButtonPress1 = () =>{
     const [value,setValue]=useState('')
     const inputRef = useRef<HTMLInputElement>(null)
     const save = () =>{
@@ -20,21 +22,25 @@ export const InputByButtonPress = () =>{
     return  <><input ref={inputRef}/> <button onClick={save}>save</button> actual value : {value}</>
 
 }
-export const ControlledInput = () => {
+export const InputByButtonPress = React.memo(InputByButtonPress1)
+
+ const ControlledInput1 = () => {
 const [parentValue,setParentValue]=useState('')
 const onChange = (e:ChangeEvent<HTMLInputElement>) =>{
     setParentValue(e.currentTarget.value)
 }
     return <input onChange={onChange} value={parentValue}/>
 }
-export const ControlledCheckbox = () => {
+export const ControlledInput = React.memo(ControlledInput1)
+ const ControlledCheckbox1 = () => {
     const [parentValue,setParentValue]=useState(true)
     const onChange = (e:ChangeEvent<HTMLInputElement>) =>{
         setParentValue(e.currentTarget.checked)
     }
     return <input type={"checkbox"} checked={parentValue} onChange={onChange} />
 }
-export const ControlledSelect = () => {
+export const ControlledCheckbox = React.memo(ControlledCheckbox1)
+ const ControlledSelect1 = () => {
     const [parentValue,setParentValue]=useState<string|undefined>(undefined)
     const onChange = (e:ChangeEvent<HTMLSelectElement>) =>{
         setParentValue(e.currentTarget.value)
@@ -46,3 +52,4 @@ export const ControlledSelect = () => {
         <option value={'3'}>Kiev</option>
     </select>
 }
+export const ControlledSelect = React.memo(ControlledSelect1)

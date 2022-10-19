@@ -22,7 +22,7 @@ const reducer = (state:StateType,action:ActionType):StateType => {
     //     return !state
     // }
 }
-function UncontrolledAccordion(props: AccordionPropsType) {
+function UncontrolledAccordion1(props: AccordionPropsType) {
  //let [collapsed,setCollapsed] = useState(false)
  let [state,dispatch] = useReducer(reducer,{collapsed:false})
     return <div>
@@ -47,4 +47,5 @@ function AccordionBody (props: any) {
     </ul>
 
 }
+const UncontrolledAccordion = React.memo(UncontrolledAccordion1)
 export default UncontrolledAccordion;

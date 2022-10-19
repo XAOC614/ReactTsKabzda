@@ -12,7 +12,7 @@ type SelectPropsType ={
     items:ItemType[]
 }
 
-export const Select = (props:SelectPropsType) => {
+ const Select1 = (props:SelectPropsType) => {
     const [active,setActive]=useState(false)
     const [hoveredElement,setHoveredElement]=useState(props.value)
     const selectedItem = props.items.find(i=>i.value === props.value)
@@ -58,3 +58,4 @@ return(
     </>
 )
 }
+export const Select = React.memo(Select1)
