@@ -14,6 +14,7 @@ import {
 } from "./components/Input/UncontrolledInput";
 import {Select} from "./components/Select/Select";
 import {DifficultCountingExample} from "./components/UseMemo/UseMemo";
+ import {Clock} from "./components/Clock/Clock";
 
 
 
@@ -46,6 +47,7 @@ function App() {
         </div>
         <Select value={value} onChange={setValue} items={[{value:'1',title:'Minsk'},{value:'2',title:'Moskow'},{value:'3',title:'Kiev'}]}/>
         <DifficultCountingExample/>
+        <Clock mode={'analog'}/>
 
     </div>
 }
